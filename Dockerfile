@@ -1,4 +1,5 @@
 FROM openjdk:latest
+MAINTAINER Etienne Koekemoer <me@etiennek.com>
 
 ENV BOOTAPP_JAVA_OPTS -Xms256m -Xmx256m
 
@@ -21,11 +22,16 @@ WORKDIR $BOOTAPP_HOME
 EXPOSE $SERVER_PORT
 
 HEALTHCHECK --interval=30s --timeout=5s --retries=4 \
-  CMD curl -f http://localhost:$SERVER_PORT/health || exit 1
+  CMD curl -f http://localhost:$SERVER_PORT/health/ || exit 1
 
 VOLUME /tmp
 VOLUME $BOOTAPP_DATA_VOLUME
 
-ENTRYPOINT ["./wrapper.sh"]
-
 USER $BOOTAPP_USR
+
+ONBUILD USER root
+ONBUILD COPY app.jar $BOOTAPP_PATH
+ONBUILD RUN chown -R $BOOTAPP_USR:$BOOTAPP_GROUP $BOOTAPP_HOME && touch $BOOTAPP_PATH
+ONBUILD USER $BOOTAPP
+
+ENTRYPOINT ["./wrapper.sh"]
