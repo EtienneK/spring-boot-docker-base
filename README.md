@@ -24,8 +24,8 @@ Boot application is easy:
 
   1. Create a new Dockerfile and use this image as the 
      `FROM` image
-  1. Make sure the Spring Boot application jar file is in 
-  the same directory as the Dockerfile you've created above
+  1. Make sure the Spring Boot application jar (must be named `app.jar`) 
+     file is in the same directory as the Dockerfile you've created above
   1. Build your Dockerfile
 
 Here's an example on how you would use it
