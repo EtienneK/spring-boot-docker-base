@@ -6,7 +6,7 @@
 ## What is this?
 
 A Docker base image, following Docker image
-[best-practices](http://http://www.projectatomic.io/docs/docker-image-author-guidance/),
+[best-practices](http://www.projectatomic.io/docs/docker-image-author-guidance/),
 for Spring Boot applications.
 
 Some features:
