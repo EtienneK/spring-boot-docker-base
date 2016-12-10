@@ -57,3 +57,7 @@ docker run -p 8007:8007 \
   -e BOOTAPP_OPTS="--spring.profiles.active=test --spring.main.banner-mode=off" \
   bootapp-docker
 ```
+
+## Example Project
+
+[https://github.com/EtienneK/spring-boot-admin](https://github.com/EtienneK/spring-boot-admin)
