@@ -6,7 +6,7 @@
 ## What is this?
 
 A Docker base image, following Docker image
-[best-practices](http://http://www.projectatomic.io/docs/docker-image-author-guidance/),
+[best-practices](http://www.projectatomic.io/docs/docker-image-author-guidance/),
 for Spring Boot applications.
 
 Some features:
@@ -24,8 +24,8 @@ Boot application is easy:
 
   1. Create a new Dockerfile and use this image as the 
      `FROM` image
-  1. Make sure the Spring Boot application jar file is in 
-  the same directory as the Dockerfile you've created above
+  1. Make sure the Spring Boot application jar (must be named `app.jar`) 
+     file is in the same directory as the Dockerfile you've created above
   1. Build your Dockerfile
 
 Here's an example on how you would use it
@@ -57,3 +57,7 @@ docker run -p 8007:8007 \
   -e BOOTAPP_OPTS="--spring.profiles.active=test --spring.main.banner-mode=off" \
   bootapp-docker
 ```
+
+## Example Project
+
+[https://github.com/EtienneK/spring-boot-admin](https://github.com/EtienneK/spring-boot-admin)
