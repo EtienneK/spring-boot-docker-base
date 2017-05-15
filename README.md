@@ -16,6 +16,7 @@ Some features:
   - Injection of JVM- and application arguments at runtime
   - Wrapper script that will forward Unix signals (example: 
     `SIGINT`) to the Spring Boot application
+  - Runs on RedHat OpenShift out of the box
 
 ## How do I use it?
 
